@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity, StatusBar} from 'react-native';
 const styles = StyleSheet.create({
     container: {
       paddingTop: 50,
@@ -15,13 +15,19 @@ const styles = StyleSheet.create({
       }
   });
   
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View>
     <Image 
     style={styles.topPhoto}
     source={require('./../Assets/Images/kylepic.jpg')}/>
       <Text style={styles.welcomeText}>Welcome! It's Burger's Recipe App for Kyle</Text>
+
+      <TouchableOpacity
+                onPress={() => navigation.replace("Home")}
+            >
+                <Text>Navigate to Home</Text>
+            </TouchableOpacity>
     </View>
   );
 }
